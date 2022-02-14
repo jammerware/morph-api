@@ -1,0 +1,1 @@
+echo ${GOOGLE_APP_CREDENTIALS_RAW} > /app/google-app-credentials.json
