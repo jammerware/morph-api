@@ -20,6 +20,7 @@
   "homepage": "https://github.com/jammerware/morph#readme",
   "dependencies": {
     "@google-cloud/translate": "^6.3.1",
+    "@koa/cors": "^3.1.0",
     "dotenv": "^16.0.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",

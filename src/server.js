@@ -2,6 +2,7 @@ import 'dotenv/config';
 import Koa from "koa";
 import Router from "koa-router";
 import bodyParser from "koa-bodyparser";
+import cors from "@koa/cors";
 import { Service } from './service.js';
 
 const app = new Koa();
@@ -27,6 +28,7 @@ function start(service) {
         });
 
     app
+        .use(cors())
         .use(bodyParser())
         .use(router.routes())
         .use(router.allowedMethods());
