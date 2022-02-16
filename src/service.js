@@ -18,7 +18,7 @@ class Service {
                     pinyin: entry["pinyin"],
                     radical: entry["radical"],
                     definition: entry["definition"],
-                    strokeCount: entry["strokeCount"]
+                    strokeCount: entry["stroke_count"]
                 };
             }
 
@@ -44,8 +44,6 @@ class Service {
         }
 
         return translation;
-        
-        // return Promise.resolve("火山");
     }
 }
 
