@@ -17,7 +17,10 @@ class Service {
                     freqRank: entry["frequency_rank"],
                     pinyin: entry["pinyin"],
                     radical: entry["radical"],
-                    definitions: !entry["definition"] ? [] : entry["definition"].split(";"),
+                    definitions: !entry["definition"] ? [] : entry["definition"]
+                        .split(/[;,]/)
+                        .filter(Boolean)
+                        .map(s => s.trim()),
                     strokeCount: entry["stroke_count"]
                 };
             }
