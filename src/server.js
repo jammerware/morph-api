@@ -25,8 +25,10 @@ function start(service) {
             }
 
             ctx.response.body = response;
+        })
+        .get("/character/:character", async ctx => {
+            ctx.response.body = service.getCharacterDetails(ctx.params.character);
         });
-
     app
         .use(cors())
         .use(bodyParser())
@@ -36,4 +38,6 @@ function start(service) {
     app.listen(process.env.PORT || 3000, () => console.log("Listening..."));
 }
 
-start(Service.create());
+(async () => {
+    start(await Service.create());
+})();

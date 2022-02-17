@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jammerware/morph#readme",
   "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
     "@google-cloud/translate": "^6.3.1",
     "@koa/cors": "^3.1.0",
     "dotenv": "^16.0.0",
