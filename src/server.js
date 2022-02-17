@@ -21,13 +21,13 @@ function start(service) {
             };
 
             for (const character of translation) {
-                response.characters.push(service.getCharacterDecomposition(character));
+                response.characters.push(service.getCharacter(character));
             }
 
             ctx.response.body = response;
         })
         .get("/character/:character", async ctx => {
-            ctx.response.body = service.getCharacterDetails(ctx.params.character);
+            ctx.response.body = service.getCharacter(ctx.params.character);
         });
     app
         .use(cors())

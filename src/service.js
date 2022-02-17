@@ -80,21 +80,15 @@ class Service {
         return dict;
     }
 
-    getCharacterDecomposition(character) {
-        return {
-            character,
-            ... this.hanziDb[character]
-        };
-    }
-
-    getCharacterDetails(character) {
+    getCharacter(character) {
         const cldbInfo = this.chineseLexicalDb[character];
 
         return {
-            ... this.getCharacterDecomposition(character),
+            character,
+            ... this.hanziDb[character],
             isUnbound: cldbInfo.isUnbound || false,
             commonWords: cldbInfo.words
-        }
+        };
     }
 
     async translate(input) {
