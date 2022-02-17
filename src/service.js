@@ -16,7 +16,7 @@ class Service {
                 dict[entry["charcter"]] = {
                     freqRank: entry["frequency_rank"],
                     pinyin: entry["pinyin"],
-                    radical: entry["radical"],
+                    semanticRadical: entry["radical"],
                     definitions: !entry["definition"] ? [] : entry["definition"]
                         .split(/[;,]/)
                         .filter(Boolean)
