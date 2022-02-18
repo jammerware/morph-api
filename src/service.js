@@ -8,8 +8,8 @@ class Service {
             const instance = new Service();
 
             instance.translateClient = new v2.Translate();
-            instance.chineseLexicalDb = await Service.loadChineseLexicalDb();
             instance.hanziDb = Service.loadHanziDb();
+            instance.chineseLexicalDb = await Service.loadChineseLexicalDb(instance.hanziDb);
             
             Service.instance = instance;
         }
@@ -17,7 +17,7 @@ class Service {
         return Service.instance;
     }
 
-    static loadChineseLexicalDb() {
+    static loadChineseLexicalDb(hanziDb) {
         return new Promise((resolve, reject) => {
             const cldbDict = {};
 
@@ -68,13 +68,28 @@ class Service {
             dict[entry["charcter"]] = {
                 freqRank: parseInt(entry["frequency_rank"]),
                 pinyin: entry["pinyin"],
-                semanticRadical: entry["radical"],
                 definitions: !entry["definition"] ? [] : entry["definition"]
                     .split(/[;,]/)
                     .filter(Boolean)
                     .map(s => s.trim()),
+                semanticRadical: entry["radical"],
                 strokeCount: parseInt(entry["stroke_count"])
             };
+        }
+
+        // second passthrough to fix up the semantic radical property
+        for (const key of Object.keys(dict)) {
+            // if the character is equal to its semantic radical, that's not very interesting, is it?
+            const semanticRadical = dict[key].semanticRadical;
+            if (semanticRadical && key != semanticRadical) {
+                dict[key].semanticRadical = {
+                    radical: semanticRadical,
+                    definition: dict[semanticRadical] ? dict[semanticRadical].definitions : null
+                }
+            }
+            else {
+                delete dict[key]["semanticRadical"]
+            }
         }
 
         return dict;
@@ -82,10 +97,11 @@ class Service {
 
     getCharacter(character) {
         const cldbInfo = this.chineseLexicalDb[character];
+        const hanziDbInfo = this.hanziDb[character];
 
         return {
             character,
-            ... this.hanziDb[character],
+            ... hanziDbInfo,
             isUnbound: cldbInfo.isUnbound || false,
             commonWords: cldbInfo.words
         };
