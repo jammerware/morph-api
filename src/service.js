@@ -127,7 +127,7 @@ class Service {
     }
 
     async translate(input, targetLanguage = "zh-cn") {
-        const translation = await this.translateClient.translate(input);
+        const translation = await this.translateClient.translate(input, targetLanguage);
 
         if (Array.isArray(translation)) {
             return translation[0]
