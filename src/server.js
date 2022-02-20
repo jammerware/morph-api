@@ -13,6 +13,9 @@ function start(service) {
         .get("/", ctx => {
             ctx.body = "Hello, world!"
         })
+        .post("/translate/:targetLanguage", ctx => {
+            
+        })
         .post("/decompose", async ctx => {
             const translation = await service.translate(ctx.request.body.word);
             const response = {

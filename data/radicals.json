@@ -1,0 +1,1332 @@
+{
+    "一": {
+        "radicalNo": 1,
+        "english": "one",
+        "pinyin": "yī",
+        "strokeCount": 1
+    },
+    "丨": {
+        "radicalNo": 2,
+        "english": "line",
+        "pinyin": "shù",
+        "strokeCount": 1
+    },
+    "丶": {
+        "radicalNo": 3,
+        "english": "dot",
+        "pinyin": "diǎn",
+        "strokeCount": 1
+    },
+    "丿": {
+        "radicalNo": 4,
+        "english": "slash",
+        "pinyin": "piě",
+        "strokeCount": 1,
+        "variant": "乀 乁"
+    },
+    "乙": {
+        "radicalNo": 5,
+        "english": "second",
+        "pinyin": "yǐ",
+        "strokeCount": 1,
+        "variant": "乚 乛"
+    },
+    "亅": {
+        "radicalNo": 6,
+        "english": "hook",
+        "pinyin": "gōu",
+        "strokeCount": 1
+    },
+    "二": {
+        "radicalNo": 7,
+        "english": "two",
+        "pinyin": "èr",
+        "strokeCount": 2
+    },
+    "亠": {
+        "radicalNo": 8,
+        "english": "lid",
+        "pinyin": "tóu",
+        "strokeCount": 2
+    },
+    "人": {
+        "radicalNo": 9,
+        "english": "person",
+        "pinyin": "rén",
+        "strokeCount": 2,
+        "variant": "亻"
+    },
+    "儿": {
+        "radicalNo": 10,
+        "english": "legs",
+        "pinyin": "ér",
+        "strokeCount": 2
+    },
+    "入": {
+        "radicalNo": 11,
+        "english": "enter",
+        "pinyin": "rù",
+        "strokeCount": 2
+    },
+    "八": {
+        "radicalNo": 12,
+        "english": "eight",
+        "pinyin": "bā",
+        "strokeCount": 2,
+        "variant": "丷"
+    },
+    "冂": {
+        "radicalNo": 13,
+        "english": "down box",
+        "pinyin": "jiǒng",
+        "strokeCount": 2
+    },
+    "冖": {
+        "radicalNo": 14,
+        "english": "cover",
+        "pinyin": "mì",
+        "strokeCount": 2
+    },
+    "冫": {
+        "radicalNo": 15,
+        "english": "ice",
+        "pinyin": "bīng",
+        "strokeCount": 2
+    },
+    "几": {
+        "radicalNo": 16,
+        "english": "table",
+        "pinyin": "jī, jǐ",
+        "strokeCount": 2
+    },
+    "凵": {
+        "radicalNo": 17,
+        "english": "open box",
+        "pinyin": "qǔ",
+        "strokeCount": 2
+    },
+    "刀": {
+        "radicalNo": 18,
+        "english": "knife",
+        "pinyin": "dāo",
+        "strokeCount": 2,
+        "variant": "刂"
+    },
+    "力": {
+        "radicalNo": 19,
+        "english": "power",
+        "pinyin": "lì",
+        "strokeCount": 2
+    },
+    "勹": {
+        "radicalNo": 20,
+        "english": "wrap",
+        "pinyin": "bāo",
+        "strokeCount": 2
+    },
+    "匕": {
+        "radicalNo": 21,
+        "english": "ladle",
+        "pinyin": "bǐ",
+        "strokeCount": 2
+    },
+    "匚": {
+        "radicalNo": 22,
+        "english": "right open box",
+        "pinyin": "fāng",
+        "strokeCount": 2
+    },
+    "匸": {
+        "radicalNo": 23,
+        "english": "hiding enclosure",
+        "pinyin": "xǐ",
+        "strokeCount": 2
+    },
+    "十": {
+        "radicalNo": 24,
+        "english": "ten",
+        "pinyin": "shí",
+        "strokeCount": 2
+    },
+    "卜": {
+        "radicalNo": 25,
+        "english": "divination",
+        "pinyin": "bǔ",
+        "strokeCount": 2
+    },
+    "卩": {
+        "radicalNo": 26,
+        "english": "seal",
+        "pinyin": "jié",
+        "strokeCount": 2
+    },
+    "厂": {
+        "radicalNo": 27,
+        "english": "cliff",
+        "pinyin": "hàn",
+        "strokeCount": 2
+    },
+    "厶": {
+        "radicalNo": 28,
+        "english": "private",
+        "pinyin": "sī",
+        "strokeCount": 2
+    },
+    "又": {
+        "radicalNo": 29,
+        "english": "again",
+        "pinyin": "yòu",
+        "strokeCount": 2
+    },
+    "口": {
+        "radicalNo": 30,
+        "english": "mouth",
+        "pinyin": "kǒu",
+        "strokeCount": 3
+    },
+    "囗": {
+        "radicalNo": 31,
+        "english": "enclosure",
+        "pinyin": "wéi",
+        "strokeCount": 3
+    },
+    "土": {
+        "radicalNo": 32,
+        "english": "earth",
+        "pinyin": "tǔ",
+        "strokeCount": 3
+    },
+    "士": {
+        "radicalNo": 33,
+        "english": "scholar",
+        "pinyin": "shì",
+        "strokeCount": 3
+    },
+    "夂": {
+        "radicalNo": 34,
+        "english": "go",
+        "pinyin": "zhī",
+        "strokeCount": 3
+    },
+    "夊": {
+        "radicalNo": 35,
+        "english": "go slowly",
+        "pinyin": "suī",
+        "strokeCount": 3
+    },
+    "夕": {
+        "radicalNo": 36,
+        "english": "night",
+        "pinyin": "xī",
+        "strokeCount": 3
+    },
+    "大": {
+        "radicalNo": 37,
+        "english": "big",
+        "pinyin": "dà",
+        "strokeCount": 3
+    },
+    "女": {
+        "radicalNo": 38,
+        "english": "woman",
+        "pinyin": "nǚ",
+        "strokeCount": 3
+    },
+    "子": {
+        "radicalNo": 39,
+        "english": "child",
+        "pinyin": "zǐ",
+        "strokeCount": 3
+    },
+    "宀": {
+        "radicalNo": 40,
+        "english": "roof",
+        "pinyin": "gài",
+        "strokeCount": 3
+    },
+    "寸": {
+        "radicalNo": 41,
+        "english": "inch",
+        "pinyin": "cùn",
+        "strokeCount": 3
+    },
+    "小": {
+        "radicalNo": 42,
+        "english": "small",
+        "pinyin": "xiǎo",
+        "strokeCount": 3
+    },
+    "尢": {
+        "radicalNo": 43,
+        "english": "lame",
+        "pinyin": "yóu",
+        "strokeCount": 3,
+        "variant": "尣"
+    },
+    "尸": {
+        "radicalNo": 44,
+        "english": "corpse",
+        "pinyin": "shī",
+        "strokeCount": 3
+    },
+    "屮": {
+        "radicalNo": 45,
+        "english": "sprout",
+        "pinyin": "chè",
+        "strokeCount": 3
+    },
+    "山": {
+        "radicalNo": 46,
+        "english": "mountain",
+        "pinyin": "shān",
+        "strokeCount": 3
+    },
+    "川": {
+        "radicalNo": 47,
+        "english": "river",
+        "pinyin": "chuān",
+        "strokeCount": 3,
+        "variant": "巛 巜"
+    },
+    "工": {
+        "radicalNo": 48,
+        "english": "work",
+        "pinyin": "gōng",
+        "strokeCount": 3
+    },
+    "己": {
+        "radicalNo": 49,
+        "english": "oneself",
+        "pinyin": "jǐ",
+        "strokeCount": 3
+    },
+    "巾": {
+        "radicalNo": 50,
+        "english": "towel",
+        "pinyin": "jīn",
+        "strokeCount": 3
+    },
+    "干": {
+        "radicalNo": 51,
+        "english": "dry",
+        "pinyin": "gān",
+        "strokeCount": 3
+    },
+    "幺": {
+        "radicalNo": 52,
+        "english": "thread",
+        "pinyin": "yāo",
+        "strokeCount": 3
+    },
+    "广": {
+        "radicalNo": 53,
+        "english": "shelter",
+        "pinyin": "guǎng",
+        "strokeCount": 3
+    },
+    "廴": {
+        "radicalNo": 54,
+        "english": "stride",
+        "pinyin": "yǐn",
+        "strokeCount": 3
+    },
+    "廾": {
+        "radicalNo": 55,
+        "english": "hands joined",
+        "pinyin": "gǒng",
+        "strokeCount": 3
+    },
+    "弋": {
+        "radicalNo": 56,
+        "english": "shoot with a bow",
+        "pinyin": "yì",
+        "strokeCount": 3
+    },
+    "弓": {
+        "radicalNo": 57,
+        "english": "bow",
+        "pinyin": "gōng",
+        "strokeCount": 3
+    },
+    "彐": {
+        "radicalNo": 58,
+        "english": "snout",
+        "pinyin": "jì",
+        "strokeCount": 3,
+        "variant": "彑"
+    },
+    "彡": {
+        "radicalNo": 59,
+        "english": "hair",
+        "pinyin": "shān",
+        "strokeCount": 3
+    },
+    "彳": {
+        "radicalNo": 60,
+        "english": "step",
+        "pinyin": "chì",
+        "strokeCount": 3
+    },
+    "心": {
+        "radicalNo": 61,
+        "english": "heart",
+        "pinyin": "xīn",
+        "strokeCount": 4,
+        "variant": "忄"
+    },
+    "戈": {
+        "radicalNo": 62,
+        "english": "spear",
+        "pinyin": "gē",
+        "strokeCount": 4
+    },
+    "户": {
+        "radicalNo": 63,
+        "english": "door",
+        "pinyin": "hù",
+        "strokeCount": 4
+    },
+    "手": {
+        "radicalNo": 64,
+        "english": "hand",
+        "pinyin": "shǒu",
+        "strokeCount": 4,
+        "variant": "扌"
+    },
+    "支": {
+        "radicalNo": 65,
+        "english": "branch",
+        "pinyin": "zhī",
+        "strokeCount": 4
+    },
+    "攴": {
+        "radicalNo": 66,
+        "english": "rap",
+        "pinyin": "pū",
+        "strokeCount": 4,
+        "variant": "攵"
+    },
+    "文": {
+        "radicalNo": 67,
+        "english": "script",
+        "pinyin": "wén",
+        "strokeCount": 4
+    },
+    "斗": {
+        "radicalNo": 68,
+        "english": "dipper",
+        "pinyin": "dǒu",
+        "strokeCount": 4
+    },
+    "斤": {
+        "radicalNo": 69,
+        "english": "axe",
+        "pinyin": "jīn",
+        "strokeCount": 4
+    },
+    "方": {
+        "radicalNo": 70,
+        "english": "square",
+        "pinyin": "fāng",
+        "strokeCount": 4
+    },
+    "无": {
+        "radicalNo": 71,
+        "english": "not",
+        "pinyin": "wú",
+        "strokeCount": 4
+    },
+    "日": {
+        "radicalNo": 72,
+        "english": "sun",
+        "pinyin": "rì",
+        "strokeCount": 4
+    },
+    "曰": {
+        "radicalNo": 73,
+        "english": "say",
+        "pinyin": "yuē",
+        "strokeCount": 4
+    },
+    "月": {
+        "radicalNo": 74,
+        "english": "moon",
+        "pinyin": "yuè",
+        "strokeCount": 4
+    },
+    "木": {
+        "radicalNo": 75,
+        "english": "tree",
+        "pinyin": "mù",
+        "strokeCount": 4
+    },
+    "欠": {
+        "radicalNo": 76,
+        "english": "lack",
+        "pinyin": "qiàn",
+        "strokeCount": 4
+    },
+    "止": {
+        "radicalNo": 77,
+        "english": "stop",
+        "pinyin": "zhǐ",
+        "strokeCount": 4
+    },
+    "歹": {
+        "radicalNo": 78,
+        "english": "death",
+        "pinyin": "dǎi",
+        "strokeCount": 4
+    },
+    "殳": {
+        "radicalNo": 79,
+        "english": "weapon",
+        "pinyin": "shū",
+        "strokeCount": 4
+    },
+    "母": {
+        "radicalNo": 80,
+        "english": "mother",
+        "pinyin": "mǔ",
+        "strokeCount": 4,
+        "variant": "毋"
+    },
+    "比": {
+        "radicalNo": 81,
+        "english": "compare",
+        "pinyin": "bǐ",
+        "strokeCount": 4
+    },
+    "毛": {
+        "radicalNo": 82,
+        "english": "fur",
+        "pinyin": "máo",
+        "strokeCount": 4
+    },
+    "氏": {
+        "radicalNo": 83,
+        "english": "clan",
+        "pinyin": "shì",
+        "strokeCount": 4
+    },
+    "气": {
+        "radicalNo": 84,
+        "english": "steam",
+        "pinyin": "qì",
+        "strokeCount": 4
+    },
+    "水": {
+        "radicalNo": 85,
+        "english": "water",
+        "pinyin": "shuǐ",
+        "strokeCount": 4,
+        "variant": "氵"
+    },
+    "火": {
+        "radicalNo": 86,
+        "english": "fire",
+        "pinyin": "huǒ",
+        "strokeCount": 4,
+        "variant": "灬"
+    },
+    "爪": {
+        "radicalNo": 87,
+        "english": "claw",
+        "pinyin": "zhǎo",
+        "strokeCount": 4,
+        "variant": "爫"
+    },
+    "父": {
+        "radicalNo": 88,
+        "english": "father",
+        "pinyin": "fù",
+        "strokeCount": 4
+    },
+    "爻": {
+        "radicalNo": 89,
+        "english": "lines on a trigram",
+        "pinyin": "yáo",
+        "strokeCount": 4
+    },
+    "爿": {
+        "radicalNo": 90,
+        "english": "half of a tree trunk",
+        "pinyin": "qiáng",
+        "strokeCount": 4
+    },
+    "片": {
+        "radicalNo": 91,
+        "english": "slice",
+        "pinyin": "piàn",
+        "strokeCount": 4
+    },
+    "牙": {
+        "radicalNo": 92,
+        "english": "tooth",
+        "pinyin": "yá",
+        "strokeCount": 4
+    },
+    "牛": {
+        "radicalNo": 93,
+        "english": "cow",
+        "pinyin": "niú",
+        "strokeCount": 4,
+        "variant": "牜"
+    },
+    "犭": {
+        "radicalNo": 94,
+        "english": "dog",
+        "pinyin": "quǎn",
+        "strokeCount": 3,
+        "variant": "犬"
+    },
+    "玄": {
+        "radicalNo": 95,
+        "english": "profound",
+        "pinyin": "xuán",
+        "strokeCount": 5
+    },
+    "玉": {
+        "radicalNo": 96,
+        "english": "jade",
+        "pinyin": "yù",
+        "strokeCount": 5,
+        "variant": "王"
+    },
+    "瓜": {
+        "radicalNo": 97,
+        "english": "melon",
+        "pinyin": "guā",
+        "strokeCount": 5
+    },
+    "瓦": {
+        "radicalNo": 98,
+        "english": "tile",
+        "pinyin": "wǎ",
+        "strokeCount": 5
+    },
+    "甘": {
+        "radicalNo": 99,
+        "english": "sweet",
+        "pinyin": "gān",
+        "strokeCount": 5
+    },
+    "生": {
+        "radicalNo": 100,
+        "english": "life",
+        "pinyin": "shēng",
+        "strokeCount": 5
+    },
+    "用": {
+        "radicalNo": 101,
+        "english": "use",
+        "pinyin": "yòng",
+        "strokeCount": 5
+    },
+    "田": {
+        "radicalNo": 102,
+        "english": "field",
+        "pinyin": "tián",
+        "strokeCount": 5
+    },
+    "疋": {
+        "radicalNo": 103,
+        "english": "cloth",
+        "pinyin": "pǐ",
+        "strokeCount": 5
+    },
+    "疒": {
+        "radicalNo": 104,
+        "english": "ill",
+        "pinyin": "bìng",
+        "strokeCount": 5
+    },
+    "癶": {
+        "radicalNo": 105,
+        "english": "foot steps",
+        "pinyin": "bō",
+        "strokeCount": 5
+    },
+    "白": {
+        "radicalNo": 106,
+        "english": "white",
+        "pinyin": "bái",
+        "strokeCount": 5
+    },
+    "皮": {
+        "radicalNo": 107,
+        "english": "skin",
+        "pinyin": "pí",
+        "strokeCount": 5
+    },
+    "皿": {
+        "radicalNo": 108,
+        "english": "dish",
+        "pinyin": "mǐn",
+        "strokeCount": 5
+    },
+    "目": {
+        "radicalNo": 109,
+        "english": "eye",
+        "pinyin": "mù",
+        "strokeCount": 5
+    },
+    "矛": {
+        "radicalNo": 110,
+        "english": "spear",
+        "pinyin": "máo",
+        "strokeCount": 5
+    },
+    "矢": {
+        "radicalNo": 111,
+        "english": "arrow",
+        "pinyin": "shǐ",
+        "strokeCount": 5
+    },
+    "石": {
+        "radicalNo": 112,
+        "english": "stone",
+        "pinyin": "shí",
+        "strokeCount": 5
+    },
+    "示": {
+        "radicalNo": 113,
+        "english": "spirit",
+        "pinyin": "shì",
+        "strokeCount": 5,
+        "variant": "礻"
+    },
+    "禸": {
+        "radicalNo": 114,
+        "english": "track",
+        "pinyin": "róu",
+        "strokeCount": 4
+    },
+    "禾": {
+        "radicalNo": 115,
+        "english": "grain",
+        "pinyin": "hé",
+        "strokeCount": 5
+    },
+    "穴": {
+        "radicalNo": 116,
+        "english": "cave",
+        "pinyin": "xuè",
+        "strokeCount": 5
+    },
+    "立": {
+        "radicalNo": 117,
+        "english": "stand",
+        "pinyin": "lì",
+        "strokeCount": 5
+    },
+    "竹": {
+        "radicalNo": 118,
+        "english": "bamboo",
+        "pinyin": "zhú",
+        "strokeCount": 6
+    },
+    "米": {
+        "radicalNo": 119,
+        "english": "rice",
+        "pinyin": "mǐ",
+        "strokeCount": 6
+    },
+    "纟": {
+        "radicalNo": 120,
+        "english": "silk",
+        "pinyin": "sī",
+        "strokeCount": 3,
+        "variant": "(糸)"
+    },
+    "缶": {
+        "radicalNo": 121,
+        "english": "jar",
+        "pinyin": "fǒu",
+        "strokeCount": 6
+    },
+    "网": {
+        "radicalNo": 122,
+        "english": "net",
+        "pinyin": "wǎng",
+        "strokeCount": 6,
+        "variant": "罒"
+    },
+    "羊": {
+        "radicalNo": 123,
+        "english": "sheep",
+        "pinyin": "yáng",
+        "strokeCount": 6
+    },
+    "羽": {
+        "radicalNo": 124,
+        "english": "feather",
+        "pinyin": "yǔ",
+        "strokeCount": 6
+    },
+    "老": {
+        "radicalNo": 125,
+        "english": "old",
+        "pinyin": "lǎo",
+        "strokeCount": 6
+    },
+    "而": {
+        "radicalNo": 126,
+        "english": "and",
+        "pinyin": "ér",
+        "strokeCount": 6
+    },
+    "耒": {
+        "radicalNo": 127,
+        "english": "plow",
+        "pinyin": "lěi",
+        "strokeCount": 6
+    },
+    "耳": {
+        "radicalNo": 128,
+        "english": "ear",
+        "pinyin": "ěr",
+        "strokeCount": 6
+    },
+    "聿": {
+        "radicalNo": 129,
+        "english": "brush",
+        "pinyin": "yù",
+        "strokeCount": 6
+    },
+    "肉": {
+        "radicalNo": 130,
+        "english": "meat",
+        "pinyin": "ròu",
+        "strokeCount": 6
+    },
+    "臣": {
+        "radicalNo": 131,
+        "english": "minister",
+        "pinyin": "chén",
+        "strokeCount": 6
+    },
+    "自": {
+        "radicalNo": 132,
+        "english": "oneself",
+        "pinyin": "zì",
+        "strokeCount": 6
+    },
+    "至": {
+        "radicalNo": 133,
+        "english": "arrive",
+        "pinyin": "zhì",
+        "strokeCount": 6
+    },
+    "臼": {
+        "radicalNo": 134,
+        "english": "mortar",
+        "pinyin": "jiù",
+        "strokeCount": 6
+    },
+    "舌": {
+        "radicalNo": 135,
+        "english": "tongue",
+        "pinyin": "shé",
+        "strokeCount": 6
+    },
+    "舛": {
+        "radicalNo": 136,
+        "english": "contrary",
+        "pinyin": "chuǎn",
+        "strokeCount": 6
+    },
+    "舟": {
+        "radicalNo": 137,
+        "english": "boat",
+        "pinyin": "zhōu",
+        "strokeCount": 6
+    },
+    "艮": {
+        "radicalNo": 138,
+        "english": "mountain",
+        "pinyin": "gèn",
+        "strokeCount": 6
+    },
+    "色": {
+        "radicalNo": 139,
+        "english": "color",
+        "pinyin": "sè",
+        "strokeCount": 6
+    },
+    "艹": {
+        "radicalNo": 140,
+        "english": "grass",
+        "pinyin": "cǎo",
+        "strokeCount": 3
+    },
+    "虍": {
+        "radicalNo": 141,
+        "english": "tiger",
+        "pinyin": "hǔ",
+        "strokeCount": 6
+    },
+    "虫": {
+        "radicalNo": 142,
+        "english": "insect",
+        "pinyin": "chóng",
+        "strokeCount": 6
+    },
+    "血": {
+        "radicalNo": 143,
+        "english": "blood",
+        "pinyin": "xuě",
+        "strokeCount": 6
+    },
+    "行": {
+        "radicalNo": 144,
+        "english": "walk",
+        "pinyin": "xíng",
+        "strokeCount": 6
+    },
+    "衣": {
+        "radicalNo": 145,
+        "english": "clothes",
+        "pinyin": "yī",
+        "strokeCount": 6,
+        "variant": "衤"
+    },
+    "西": {
+        "radicalNo": 146,
+        "english": "west",
+        "pinyin": "xī",
+        "strokeCount": 6,
+        "variant": "覀"
+    },
+    "见": {
+        "radicalNo": 147,
+        "english": "see",
+        "pinyin": "jiàn",
+        "strokeCount": 4,
+        "variant": "(見)"
+    },
+    "角": {
+        "radicalNo": 148,
+        "english": "horn",
+        "pinyin": "jiǎo",
+        "strokeCount": 7
+    },
+    "讠": {
+        "radicalNo": 149,
+        "english": "speech",
+        "pinyin": "yán",
+        "strokeCount": 2,
+        "variant": "(言)"
+    },
+    "谷": {
+        "radicalNo": 150,
+        "english": "valley",
+        "pinyin": "gǔ",
+        "strokeCount": 7
+    },
+    "豆": {
+        "radicalNo": 151,
+        "english": "bean",
+        "pinyin": "dòu",
+        "strokeCount": 7
+    },
+    "豕": {
+        "radicalNo": 152,
+        "english": "pig",
+        "pinyin": "shǐ",
+        "strokeCount": 7
+    },
+    "豸": {
+        "radicalNo": 153,
+        "english": "badger",
+        "pinyin": "zhì",
+        "strokeCount": 7
+    },
+    "贝": {
+        "radicalNo": 154,
+        "english": "shell",
+        "pinyin": "bèi",
+        "strokeCount": 4,
+        "variant": "(貝)"
+    },
+    "赤": {
+        "radicalNo": 155,
+        "english": "red",
+        "pinyin": "chì",
+        "strokeCount": 7
+    },
+    "走": {
+        "radicalNo": 156,
+        "english": "walk",
+        "pinyin": "zǒu",
+        "strokeCount": 7
+    },
+    "足": {
+        "radicalNo": 157,
+        "english": "foot",
+        "pinyin": "zú",
+        "strokeCount": 7
+    },
+    "身": {
+        "radicalNo": 158,
+        "english": "body",
+        "pinyin": "shēn",
+        "strokeCount": 7
+    },
+    "车": {
+        "radicalNo": 159,
+        "english": "cart",
+        "pinyin": "chē",
+        "strokeCount": 4,
+        "variant": "(車)"
+    },
+    "辛": {
+        "radicalNo": 160,
+        "english": "bitter",
+        "pinyin": "xīn",
+        "strokeCount": 7
+    },
+    "辰": {
+        "radicalNo": 161,
+        "english": "morning",
+        "pinyin": "chén",
+        "strokeCount": 7
+    },
+    "辶": {
+        "radicalNo": 162,
+        "english": "walk",
+        "pinyin": "chuò",
+        "strokeCount": 3
+    },
+    "邑": {
+        "radicalNo": 163,
+        "english": "city",
+        "pinyin": "yì",
+        "strokeCount": 7,
+        "variant": "阝"
+    },
+    "酉": {
+        "radicalNo": 164,
+        "english": "wine",
+        "pinyin": "yǒu",
+        "strokeCount": 7
+    },
+    "釆": {
+        "radicalNo": 165,
+        "english": "distinguish",
+        "pinyin": "biàn",
+        "strokeCount": 7
+    },
+    "里": {
+        "radicalNo": 166,
+        "english": "village",
+        "pinyin": "lǐ",
+        "strokeCount": 7
+    },
+    "钅": {
+        "radicalNo": 167,
+        "english": "metal",
+        "pinyin": "jīn",
+        "strokeCount": 5,
+        "variant": "金"
+    },
+    "长": {
+        "radicalNo": 168,
+        "english": "long",
+        "pinyin": "cháng",
+        "strokeCount": 4,
+        "variant": "(長)"
+    },
+    "门": {
+        "radicalNo": 169,
+        "english": "gate",
+        "pinyin": "mén",
+        "strokeCount": 3,
+        "variant": "(門)"
+    },
+    "阜": {
+        "radicalNo": 170,
+        "english": "mound",
+        "pinyin": "fù",
+        "strokeCount": 8,
+        "variant": "阝"
+    },
+    "隶": {
+        "radicalNo": 171,
+        "english": "slave",
+        "pinyin": "lì",
+        "strokeCount": 8
+    },
+    "隹": {
+        "radicalNo": 172,
+        "english": "short-tailed bird",
+        "pinyin": "zhuī",
+        "strokeCount": 8
+    },
+    "雨": {
+        "radicalNo": 173,
+        "english": "rain",
+        "pinyin": "yǔ",
+        "strokeCount": 8
+    },
+    "青": {
+        "radicalNo": 174,
+        "english": "blue",
+        "pinyin": "qīng",
+        "strokeCount": 8
+    },
+    "非": {
+        "radicalNo": 175,
+        "english": "wrong",
+        "pinyin": "fēi",
+        "strokeCount": 8
+    },
+    "面": {
+        "radicalNo": 176,
+        "english": "face",
+        "pinyin": "miàn",
+        "strokeCount": 9
+    },
+    "革": {
+        "radicalNo": 177,
+        "english": "leather",
+        "pinyin": "gé",
+        "strokeCount": 9
+    },
+    "韦": {
+        "radicalNo": 178,
+        "english": "soft leather",
+        "pinyin": "wěi",
+        "strokeCount": 4,
+        "variant": "(韋)"
+    },
+    "韭": {
+        "radicalNo": 179,
+        "english": "leek",
+        "pinyin": "jiǔ",
+        "strokeCount": 9
+    },
+    "音": {
+        "radicalNo": 180,
+        "english": "sound",
+        "pinyin": "yīn",
+        "strokeCount": 9
+    },
+    "页": {
+        "radicalNo": 181,
+        "english": "page",
+        "pinyin": "yè",
+        "strokeCount": 6,
+        "variant": "(頁)"
+    },
+    "风": {
+        "radicalNo": 182,
+        "english": "wind",
+        "pinyin": "fēng",
+        "strokeCount": 4,
+        "variant": "(風)"
+    },
+    "飞": {
+        "radicalNo": 183,
+        "english": "fly",
+        "pinyin": "fēi",
+        "strokeCount": 4,
+        "variant": "(飛)"
+    },
+    "饣": {
+        "radicalNo": 184,
+        "english": "eat",
+        "pinyin": "shí",
+        "strokeCount": 3,
+        "variant": "飠 食"
+    },
+    "首": {
+        "radicalNo": 185,
+        "english": "head",
+        "pinyin": "shǒu",
+        "strokeCount": 9
+    },
+    "香": {
+        "radicalNo": 186,
+        "english": "fragrant",
+        "pinyin": "xiāng",
+        "strokeCount": 9
+    },
+    "马": {
+        "radicalNo": 187,
+        "english": "horse",
+        "pinyin": "mǎ",
+        "strokeCount": 3,
+        "variant": "(馬)"
+    },
+    "骨": {
+        "radicalNo": 188,
+        "english": "bone",
+        "pinyin": "gǔ",
+        "strokeCount": 9
+    },
+    "高": {
+        "radicalNo": 189,
+        "english": "high",
+        "pinyin": "gāo",
+        "strokeCount": 10
+    },
+    "髟": {
+        "radicalNo": 190,
+        "english": "long hair",
+        "pinyin": "biāo",
+        "strokeCount": 10
+    },
+    "鬥": {
+        "radicalNo": 191,
+        "english": "fight",
+        "pinyin": "dòu",
+        "strokeCount": 10
+    },
+    "鬯": {
+        "radicalNo": 192,
+        "english": "sacrificial wine",
+        "pinyin": "chàng",
+        "strokeCount": 10
+    },
+    "鬲": {
+        "radicalNo": 193,
+        "english": "cauldron",
+        "pinyin": "lì",
+        "strokeCount": 10
+    },
+    "鬼": {
+        "radicalNo": 194,
+        "english": "ghost",
+        "pinyin": "guǐ",
+        "strokeCount": 9
+    },
+    "鱼": {
+        "radicalNo": 195,
+        "english": "fish",
+        "pinyin": "yú",
+        "strokeCount": 8,
+        "variant": "(魚)"
+    },
+    "鸟": {
+        "radicalNo": 196,
+        "english": "bird",
+        "pinyin": "niǎo",
+        "strokeCount": 5,
+        "variant": "(鳥)"
+    },
+    "卤": {
+        "radicalNo": 197,
+        "english": "salty",
+        "pinyin": "lǔ",
+        "strokeCount": 7
+    },
+    "鹿": {
+        "radicalNo": 198,
+        "english": "deer",
+        "pinyin": "lù",
+        "strokeCount": 11
+    },
+    "麦": {
+        "radicalNo": 199,
+        "english": "wheat",
+        "pinyin": "mài",
+        "strokeCount": 7,
+        "variant": "(麥)"
+    },
+    "麻": {
+        "radicalNo": 200,
+        "english": "hemp",
+        "pinyin": "má",
+        "strokeCount": 11
+    },
+    "黄": {
+        "radicalNo": 201,
+        "english": "yellow",
+        "pinyin": "huáng",
+        "strokeCount": 11
+    },
+    "黍": {
+        "radicalNo": 202,
+        "english": "millet",
+        "pinyin": "shǔ",
+        "strokeCount": 12
+    },
+    "黑": {
+        "radicalNo": 203,
+        "english": "black",
+        "pinyin": "hēi",
+        "strokeCount": 12
+    },
+    "黹": {
+        "radicalNo": 204,
+        "english": "embroidery",
+        "pinyin": "zhǐ",
+        "strokeCount": 12
+    },
+    "黾": {
+        "radicalNo": 205,
+        "english": "frog",
+        "pinyin": "mǐn",
+        "strokeCount": 8,
+        "variant": "(黽)"
+    },
+    "鼎": {
+        "radicalNo": 206,
+        "english": "tripod",
+        "pinyin": "dǐng",
+        "strokeCount": 12
+    },
+    "鼓": {
+        "radicalNo": 207,
+        "english": "drum",
+        "pinyin": "gǔ",
+        "strokeCount": 13
+    },
+    "鼠": {
+        "radicalNo": 208,
+        "english": "rat",
+        "pinyin": "shǔ",
+        "strokeCount": 13
+    },
+    "鼻": {
+        "radicalNo": 209,
+        "english": "nose",
+        "pinyin": "bí",
+        "strokeCount": 14
+    },
+    "齐": {
+        "radicalNo": 210,
+        "english": "even",
+        "pinyin": "qí",
+        "strokeCount": 6,
+        "variant": "(齊)"
+    },
+    "齿": {
+        "radicalNo": 211,
+        "english": "tooth",
+        "pinyin": "chǐ",
+        "strokeCount": 8,
+        "variant": "(齒)"
+    },
+    "龙": {
+        "radicalNo": 212,
+        "english": "dragon",
+        "pinyin": "lóng",
+        "strokeCount": 5,
+        "variant": "(龍)"
+    },
+    "龟": {
+        "radicalNo": 213,
+        "english": "turtle",
+        "pinyin": "guī",
+        "strokeCount": 7,
+        "variant": "(龜)"
+    },
+    "龠": {
+        "radicalNo": 214,
+        "english": "flute",
+        "pinyin": "yuè",
+        "strokeCount": 17
+    }
+}

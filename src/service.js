@@ -8,7 +8,9 @@ class Service {
             const instance = new Service();
 
             instance.translateClient = new v2.Translate();
-            instance.hanziDb = Service.loadHanziDb();
+            instance.radicalsDb = JSON.parse(fs.readFileSync('./data/radicals.json'));
+            instance.radicalsByVariantDb = Service.loadRadicalsByVariant(instance.radicalsDb);
+            instance.hanziDb = Service.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
             instance.chineseLexicalDb = await Service.loadChineseLexicalDb(instance.hanziDb);
             
             Service.instance = instance;
@@ -58,7 +60,7 @@ class Service {
             });
     }
 
-    static loadHanziDb() {
+    static loadHanziDb(radicalsDb, radicalsByVariantDb) {
         const raw = fs.readFileSync("./data/hanzidb-formatted.json");
         const parsed = JSON.parse(raw);
         const dict = {};
@@ -82,10 +84,7 @@ class Service {
             // if the character is equal to its semantic radical, that's not very interesting, is it?
             const semanticRadical = dict[key].semanticRadical;
             if (semanticRadical && key != semanticRadical) {
-                dict[key].semanticRadical = {
-                    radical: semanticRadical,
-                    definition: dict[semanticRadical] ? dict[semanticRadical].definitions : null
-                }
+                dict[key].semanticRadical = Service.getRadical(radicalsDb, radicalsByVariantDb, semanticRadical);
             }
             else {
                 delete dict[key]["semanticRadical"]
@@ -93,6 +92,21 @@ class Service {
         }
 
         return dict;
+    }
+
+    static loadRadicalsByVariant(radicalsDb) {
+        const radicalsByVariant = {};
+
+        for (const [key, value] of Object.entries(radicalsDb)) {
+            if (value.variant) {
+                radicalsByVariant[value.variant] = {
+                    radical: key,
+                    ...value
+                };
+            }
+        }
+
+        return radicalsByVariant;
     }
 
     getCharacter(character) {
@@ -107,8 +121,13 @@ class Service {
         };
     }
 
-    async translate(input) {
-        const translation = await this.translateClient.translate(input, "zh-cn");
+    // todo: this will need to be an instance method eventually or something
+    static getRadical(radicalsDb, radicalsByVariant, radical) {
+        return radicalsDb[radical] || radicalsByVariant[radical] || null;
+    }
+
+    async translate(input, targetLanguage = "zh-cn") {
+        const translation = await this.translateClient.translate(input);
 
         if (Array.isArray(translation)) {
             return translation[0]
