@@ -84,7 +84,10 @@ class Service {
             // if the character is equal to its semantic radical, that's not very interesting, is it?
             const semanticRadical = dict[key].semanticRadical;
             if (semanticRadical && key != semanticRadical) {
-                dict[key].semanticRadical = Service.getRadical(radicalsDb, radicalsByVariantDb, semanticRadical);
+                dict[key].semanticRadical = {
+                    radical: semanticRadical,
+                    ...Service.getRadical(radicalsDb, radicalsByVariantDb, semanticRadical)
+                }
             }
             else {
                 delete dict[key]["semanticRadical"]
