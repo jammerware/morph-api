@@ -8,7 +8,7 @@ class Service {
             const instance = new Service();
 
             instance.translateClient = new v2.Translate();
-            instance.radicalsDb = JSON.parse(fs.readFileSync('./data/radicals.json'));
+            instance.radicalsDb = Service.loadRadicalsDb();
             instance.radicalsByVariantDb = Service.loadRadicalsByVariant(instance.radicalsDb);
             instance.hanziDb = Service.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
             instance.chineseLexicalDb = await Service.loadChineseLexicalDb(instance.hanziDb);
@@ -95,6 +95,18 @@ class Service {
         }
 
         return dict;
+    }
+
+    static loadRadicalsDb() {
+        const raw = JSON.parse(fs.readFileSync('./data/radicals.json'))
+
+        // rename "english" to "translation"
+        for (const [key, value] of Object.entries(raw)) {
+            value.translation = value.english;
+            delete value.english;
+        }
+        
+        return raw;
     }
 
     static loadRadicalsByVariant(radicalsDb) {
