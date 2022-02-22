@@ -28,7 +28,7 @@ function start(services) {
                 characters: []
             };
 
-            for (const character of translation) {
+            for (const character of translation.translation) {
                 response.characters.push(services.data.getCharacter(character));
             }
 
