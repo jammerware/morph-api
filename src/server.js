@@ -4,33 +4,38 @@ import Router from "koa-router";
 import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
 import { Service } from './service.js';
+import { TranslationService } from './translation.service.js';
 
 const app = new Koa();
 const router = new Router();
 
-function start(service) {
+function start(services) {
     router
         .get("/", ctx => {
             ctx.body = "Hello, world!"
         })
-        .post("/translate/:targetLanguage", ctx => {
-            
+        .post("/translate", async ctx => {
+            const translation = await services.translation.translate(
+                ctx.request.body.text, 
+                ctx.request.body.targetLanguage);
+
+            ctx.response.body = translation;
         })
         .post("/decompose", async ctx => {
-            const translation = await service.translate(ctx.request.body.word);
+            const translation = await services.translation.translate(ctx.request.body.word);
             const response = {
                 "translation": translation,
                 characters: []
             };
 
             for (const character of translation) {
-                response.characters.push(service.getCharacter(character));
+                response.characters.push(services.data.getCharacter(character));
             }
 
             ctx.response.body = response;
         })
         .get("/character/:character", async ctx => {
-            ctx.response.body = service.getCharacter(ctx.params.character);
+            ctx.response.body = services.data.getCharacter(ctx.params.character);
         });
     app
         .use(cors())
@@ -42,5 +47,8 @@ function start(service) {
 }
 
 (async () => {
-    start(await Service.create());
+    start({
+        data: await Service.create(),
+        translation: TranslationService.create()
+    });
 })();

@@ -1,5 +1,4 @@
 import fs from "fs";
-import { v2 } from "@google-cloud/translate";
 import * as fastcsv from '@fast-csv/parse';
 
 class Service {
@@ -7,7 +6,6 @@ class Service {
         if (!Service.instance) {
             const instance = new Service();
 
-            instance.translateClient = new v2.Translate();
             instance.radicalsDb = Service.loadRadicalsDb();
             instance.radicalsByVariantDb = Service.loadRadicalsByVariant(instance.radicalsDb);
             instance.hanziDb = Service.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
@@ -139,16 +137,6 @@ class Service {
     // todo: this will need to be an instance method eventually or something
     static getRadical(radicalsDb, radicalsByVariant, radical) {
         return radicalsDb[radical] || radicalsByVariant[radical] || null;
-    }
-
-    async translate(input, targetLanguage = "zh-cn") {
-        const translation = await this.translateClient.translate(input, targetLanguage);
-
-        if (Array.isArray(translation)) {
-            return translation[0]
-        }
-
-        return translation;
     }
 }
 
