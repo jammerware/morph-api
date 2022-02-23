@@ -3,8 +3,8 @@ import Koa from "koa";
 import Router from "koa-router";
 import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
-import { Service } from './service.js';
-import { TranslationService } from './translation.service.js';
+import { DataService } from './services/data.service.js';
+import { TranslationService } from './services/translation.service.js';
 
 const app = new Koa();
 const router = new Router();
@@ -48,7 +48,7 @@ function start(services) {
 
 (async () => {
     start({
-        data: await Service.create(),
+        data: await DataService.create(),
         translation: TranslationService.create()
     });
 })();

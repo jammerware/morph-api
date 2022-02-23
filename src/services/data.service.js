@@ -1,20 +1,20 @@
 import fs from "fs";
 import * as fastcsv from '@fast-csv/parse';
 
-class Service {
+class DataService {
     static async create() {
-        if (!Service.instance) {
-            const instance = new Service();
+        if (!DataService.instance) {
+            const instance = new DataService();
 
-            instance.radicalsDb = Service.loadRadicalsDb();
-            instance.radicalsByVariantDb = Service.loadRadicalsByVariant(instance.radicalsDb);
-            instance.hanziDb = Service.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
-            instance.chineseLexicalDb = await Service.loadChineseLexicalDb(instance.hanziDb);
+            instance.radicalsDb = DataService.loadRadicalsDb();
+            instance.radicalsByVariantDb = DataService.loadRadicalsByVariant(instance.radicalsDb);
+            instance.hanziDb = DataService.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
+            instance.chineseLexicalDb = await DataService.loadChineseLexicalDb(instance.hanziDb);
             
-            Service.instance = instance;
+            DataService.instance = instance;
         }
 
-        return Service.instance;
+        return DataService.instance;
     }
 
     static loadChineseLexicalDb(hanziDb) {
@@ -84,7 +84,7 @@ class Service {
             if (semanticRadical && key != semanticRadical) {
                 dict[key].semanticRadical = {
                     radical: semanticRadical,
-                    ...Service.getRadical(radicalsDb, radicalsByVariantDb, semanticRadical)
+                    ...DataService.getRadical(radicalsDb, radicalsByVariantDb, semanticRadical)
                 }
             }
             else {
@@ -140,4 +140,4 @@ class Service {
     }
 }
 
-export { Service }
+export { DataService }
