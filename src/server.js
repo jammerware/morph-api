@@ -21,10 +21,34 @@ function start(services) {
 
             ctx.response.body = translation;
         })
-        .post("/decompose", async ctx => {
-            const translation = await services.translation.translate(ctx.request.body.word);
+        .get("/decomposition/:word", async ctx => {
+            const word = ctx.request.params.word;
+            if (!services.translation.isChinese(word)) {
+                ctx.response.status = 400;
+                ctx.response.body = `This endpoint requires an argument word in Chinese (e.g. /decomposition/火山). You passed "${word}".`;
+                return;
+            }
+
             const response = {
-                "translation": translation,
+                word,
+                characters: []
+            };
+
+            for (const character of word) {
+                response.characters.push(services.data.getCharacter(character));
+            }
+
+            ctx.response.body = response;
+        })
+        .post("/decompose", async ctx => {
+            let translation = ctx.request.body.word;
+            if (!services.translation.isChinese(translation)) {
+                // type mismatch, probably
+                translation = await services.translation.translate(ctx.request.body.word);
+            }
+
+            const response = {
+                translation,
                 characters: []
             };
 
