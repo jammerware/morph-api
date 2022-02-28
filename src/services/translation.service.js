@@ -45,6 +45,8 @@ class TranslationService {
         const mappedTranslations = [];
 
         for (const [i, text] of texts.entries()) {
+            // whether the request for translation came in chinese or another language, we want the "translation"
+            // property to be the chinese translation and the "l1" property to the other language.
             mappedTranslations.push({ 
                 l1: isChineseInput ? translationSummary.data.translations[i].translatedText : text, 
                 translation: isChineseInput ? text : translationSummary.data.translations[i].translatedText
