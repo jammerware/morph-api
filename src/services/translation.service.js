@@ -40,11 +40,15 @@ class TranslationService {
         }
 
         const finalTargetLanguage = this.__inferTargetLanguage(texts[0], targetLanguage);
+        const isChineseInput = (finalTargetLanguage != "zh-cn");
         const [translations, translationSummary] = await this._translateClient.translate(texts, finalTargetLanguage);
         const mappedTranslations = [];
 
         for (const [i, text] of texts.entries()) {
-            mappedTranslations.push({ l1: text, translation: translationSummary.data.translations[i].translatedText });
+            mappedTranslations.push({ 
+                l1: isChineseInput ? translationSummary.data.translations[i].translatedText : text, 
+                translation: isChineseInput ? text : translationSummary.data.translations[i].translatedText
+            });
         }
 
         return {
