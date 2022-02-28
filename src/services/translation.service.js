@@ -30,6 +30,21 @@ class TranslationService {
             translation: Array.isArray(translation) ? translation[0]: translation
         };
     }
+
+    async translateMultiple(texts, targetLanguage) {
+        let finalTargetLanguage = targetLanguage;
+
+        // infer the target language if unspecified: English if the text is chinese, otherwise chinese
+        if (!finalTargetLanguage) {
+            finalTargetLanguage = this.isChinese(text) ? "en" : "zh-cn";
+        }
+
+        // multitranslate!
+        return {
+            targetLanguage: finalTargetLanguage,
+            translations: await this._translateClient.translate(text, finalTargetLanguage)
+        }
+    }
 }
 
 export { TranslationService }

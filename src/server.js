@@ -3,6 +3,7 @@ import Koa from "koa";
 import Router from "koa-router";
 import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
+
 import { DataService } from './services/data.service.js';
 import { TranslationService } from './services/translation.service.js';
 
@@ -22,13 +23,32 @@ function start(services) {
             ctx.response.body = translation;
         })
         .post("/decompose", async ctx => {
-            const translation = await services.translation.translate(ctx.request.body.word);
+            const word = ctx.request.body.word;
+            const wordContext = {};
+
+            // if passed in chinese, translate to the target language (usually english)
+            // otherwise translate to chinese
+            if (services.translation.isChinese(word)) {
+                const l1Translation = await services.translation.translate(
+                    word,
+                    ctx.request.body.targetLanguage
+                );
+
+                wordContext.l1 = l1Translation.translation;
+                wordContext.translation = word;
+            }
+            else {
+                const chinese = await services.translation.translate(word);
+                wordContext.l1 = word;
+                wordContext.translation = chinese.translation;
+            }
+
             const response = {
-                "translation": translation,
+                word: wordContext,
                 characters: []
             };
 
-            for (const character of translation.translation) {
+            for (const character of wordContext.translation) {
                 response.characters.push(services.data.getCharacter(character));
             }
 
