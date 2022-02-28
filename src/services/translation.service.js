@@ -15,14 +15,17 @@ class TranslationService {
         return text && text.toString().match(/[\u3400-\u9FBF]/);
     }
 
-    async translate(text, targetLanguage) {
-        let finalTargetLanguage = targetLanguage;
-
-        // infer the target language if unspecified: English if the text is chinese, otherwise chinese
-        if (!finalTargetLanguage) {
-            finalTargetLanguage = this.isChinese(text) ? "en" : "zh-cn";
+    // infer the target language if unspecified: English if the text is chinese, otherwise chinese
+    __inferTargetLanguage(text, targetLanguage) {
+        if (targetLanguage) {
+            return targetLanguage;
         }
 
+        return this.isChinese(text) ? "en" : "zh-cn";
+    }
+
+    async translate(text, targetLanguage) {
+        const finalTargetLanguage = this.__inferTargetLanguage(text, targetLanguage);
         const translation = await this._translateClient.translate(text, finalTargetLanguage);
 
         return {
@@ -31,19 +34,23 @@ class TranslationService {
         };
     }
 
-    async translateMultiple(texts, targetLanguage) {
-        let finalTargetLanguage = targetLanguage;
-
-        // infer the target language if unspecified: English if the text is chinese, otherwise chinese
-        if (!finalTargetLanguage) {
-            finalTargetLanguage = this.isChinese(text) ? "en" : "zh-cn";
+    async translateAll(texts, targetLanguage) {
+        if (!texts || !texts.length) {
+            throw new Error(`"translateAll" requires at least one text to translate. You passed: ${texts}`);
         }
 
-        // multitranslate!
+        const finalTargetLanguage = this.__inferTargetLanguage(texts[0], targetLanguage);
+        const [translations, translationSummary] = await this._translateClient.translate(texts, finalTargetLanguage);
+        const indexedTranslations = {};
+
+        for (const [i, text] of texts.entries()) {
+            indexedTranslations[text] = translationSummary.data.translations[i].translatedText;
+        }
+
         return {
             targetLanguage: finalTargetLanguage,
-            translations: await this._translateClient.translate(text, finalTargetLanguage)
-        }
+            translations: indexedTranslations
+        };
     }
 }
 

@@ -15,10 +15,16 @@ function start(services) {
         .get("/", ctx => {
             ctx.body = "Hello, world!"
         })
-        .post("/translate", async ctx => {
+        .post("/translate/all", async ctx => {
+            ctx.response.body = await services.translation.translateAll(
+                ctx.request.body.text,
+                ctx.request.body.targetLanguage
+            );
+        })
+        .get("/translate/:text/:targetLanguage?", async ctx => {
             const translation = await services.translation.translate(
-                ctx.request.body.text, 
-                ctx.request.body.targetLanguage);
+                ctx.request.params.text, 
+                ctx.request.params.targetLanguage);
 
             ctx.response.body = translation;
         })
