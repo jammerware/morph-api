@@ -22,8 +22,8 @@ function start(services) {
 
             ctx.response.body = translation;
         })
-        .post("/decompose", async ctx => {
-            const word = ctx.request.body.word;
+        .get("/decomposition/:word/:targetLanguage?", async ctx => {
+            const word = ctx.request.params.word;
             const wordContext = {};
 
             // if passed in chinese, translate to the target language (usually english)
@@ -31,7 +31,7 @@ function start(services) {
             if (services.translation.isChinese(word)) {
                 const l1Translation = await services.translation.translate(
                     word,
-                    ctx.request.body.targetLanguage
+                    ctx.request.params.targetLanguage
                 );
 
                 wordContext.l1 = l1Translation.translation;
