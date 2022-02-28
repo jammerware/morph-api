@@ -41,15 +41,15 @@ class TranslationService {
 
         const finalTargetLanguage = this.__inferTargetLanguage(texts[0], targetLanguage);
         const [translations, translationSummary] = await this._translateClient.translate(texts, finalTargetLanguage);
-        const indexedTranslations = {};
+        const mappedTranslations = [];
 
         for (const [i, text] of texts.entries()) {
-            indexedTranslations[text] = translationSummary.data.translations[i].translatedText;
+            mappedTranslations.push({ l1: text, translation: translationSummary.data.translations[i].translatedText });
         }
 
         return {
             targetLanguage: finalTargetLanguage,
-            translations: indexedTranslations
+            translations: mappedTranslations
         };
     }
 }
