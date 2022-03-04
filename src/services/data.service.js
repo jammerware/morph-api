@@ -46,12 +46,14 @@ class DataService {
                     }
                 })
                 .on('end', rowCount => {
-                    // order each character's common words and limit to 6
+                    // order each character's common words
                     for(const [key, value] of Object.entries(cldbDict)) {
                         // have to spread the original array because it mutates
-                        const words = value.words
+                        const words = [... value.words]
                             .filter(w => w.word.length >= 2)
                             .sort((a, b) => a.frequency < b.frequency ? 1 : -1);
+                        
+                        // limit to 6
                         value.words = words.slice(0, 6);
                     }
 
