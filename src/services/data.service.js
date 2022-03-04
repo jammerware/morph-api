@@ -41,16 +41,16 @@ class DataService {
                     }
 
                     // special case! if the word is one character in length, the character can be unbound
-                    if (transformedData.word.length == 1) {
-                        cldbDict[transformedData.characters[0]].isUnbound = true;
+                    if (transformedData.word in hanziDb) {
+                        hanziDb[transformedData.word].isUnbound = transformedData.word.length == 1;
                     }
                 })
                 .on('end', rowCount => {
-                    // order each character's common words and limit to 4
+                    // order each character's common words and limit to 6
                     for(const [key, value] of Object.entries(cldbDict)) {
                         // have to spread the original array because it mutates
                         const words = [... value.words].sort((a, b) => a.frequency < b.frequency ? 1 : -1);
-                        value.words = words.slice(0, 4);
+                        value.words = words.slice(0, 6);
                     }
 
                     resolve(cldbDict);
