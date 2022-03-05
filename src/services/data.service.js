@@ -48,9 +48,8 @@ class DataService {
                 .on('end', rowCount => {
                     // order each character's common words
                     for(const [key, value] of Object.entries(cldbDict)) {
-                        // have to spread the original array because it mutates
-                        const words = [... value.words]
-                            .filter(w => w.word.length >= 2)
+                        const words = value.words
+                            .filter(w => w.word.length >= 2) // this copies, so no mutation by sort
                             .sort((a, b) => a.frequency < b.frequency ? 1 : -1);
                         
                         // limit to 6
@@ -133,7 +132,7 @@ class DataService {
         return {
             character,
             ... hanziDbInfo,
-            isUnbound: cldbInfo.isUnbound || false,
+            isUnbound: hanziDbInfo.isUnbound || false,
             commonWords: cldbInfo.words
         };
     }
