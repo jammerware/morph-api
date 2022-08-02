@@ -6,6 +6,7 @@ class DataService {
         if (!DataService.instance) {
             const instance = new DataService();
 
+            instance.recommendedSearchTerms = DataService.loadRecommendedSearchTerms();
             instance.radicalsDb = DataService.loadRadicalsDb();
             instance.radicalsByVariantDb = DataService.loadRadicalsByVariant(instance.radicalsDb);
             instance.hanziDb = DataService.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
@@ -125,6 +126,12 @@ class DataService {
         return radicalsByVariant;
     }
 
+    static loadRecommendedSearchTerms() {
+        const raw = JSON.parse(fs.readFileSync('./data/recommended-search-terms.en.json'));
+
+        return raw.terms;
+    }
+
     getCharacter(character) {
         const cldbInfo = this.chineseLexicalDb[character];
         const hanziDbInfo = this.hanziDb[character];
@@ -135,6 +142,10 @@ class DataService {
             isUnbound: hanziDbInfo.isUnbound || false,
             commonWords: cldbInfo.words
         };
+    }
+
+    getRecommendedSearchTerms() {
+        return this.recommendedSearchTerms;
     }
 
     // todo: this will need to be an instance method eventually or something

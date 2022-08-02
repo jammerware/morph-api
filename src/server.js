@@ -15,6 +15,9 @@ function start(services) {
         .get("/", ctx => {
             ctx.body = "Hello, world!"
         })
+        .get("/recommended-search-terms", ctx => {
+            ctx.body = services.data.getRecommendedSearchTerms()
+        })
         .post("/translate/all", async ctx => {
             ctx.response.body = await services.translation.translateAll(
                 ctx.request.body.text,
@@ -69,7 +72,8 @@ function start(services) {
         .use(router.routes())
         .use(router.allowedMethods());
 
-    app.listen(process.env.PORT || 3000, () => console.log("Listening..."));
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => console.log(`Listening on ${port}...`));
 }
 
 (async () => {

@@ -1,7 +1,7 @@
 {
   "name": "morph",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "API for Morph, an app to support English-speakers as they learn compound Chinese words",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
