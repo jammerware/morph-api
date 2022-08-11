@@ -1,3 +1,4 @@
+// @ts-nocheck
 import 'dotenv/config';
 import Koa from "koa";
 import Router from "koa-router";
@@ -26,13 +27,13 @@ function start(services) {
         })
         .get("/translate/:text/:targetLanguage?", async ctx => {
             const translation = await services.translation.translate(
-                ctx.request.params.text, 
-                ctx.request.params.targetLanguage);
+                ctx.params.text, 
+                ctx.params.targetLanguage);
 
             ctx.response.body = translation;
         })
         .get("/decomposition/:word/:targetLanguage?", async ctx => {
-            const word = ctx.request.params.word;
+            const word = ctx.params.word;
             const wordContext = {};
 
             // if passed in chinese, translate to the target language (usually english)
@@ -40,7 +41,7 @@ function start(services) {
             if (services.translation.isChinese(word)) {
                 const l1Translation = await services.translation.translate(
                     word,
-                    ctx.request.params.targetLanguage
+                    ctx.params.targetLanguage
                 );
 
                 wordContext.l1 = l1Translation.translation;
@@ -56,6 +57,7 @@ function start(services) {
                 word: wordContext,
                 characters: []
             };
+
 
             for (const character of wordContext.translation) {
                 response.characters.push(services.data.getCharacter(character));

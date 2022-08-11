@@ -1,7 +1,16 @@
+// @ts-nocheck
 import fs from "fs";
 import * as fastcsv from '@fast-csv/parse';
 
+/**
+ * A service that manages access to the various data that make this API tick.
+ */
 class DataService {
+    /**
+     * The service is intended to be a singleton and has to do startup stuff, so use this method to get one
+     * 
+     * @returns DataService
+     */
     static async create() {
         if (!DataService.instance) {
             const instance = new DataService();
@@ -62,6 +71,10 @@ class DataService {
             });
     }
 
+    /**
+     * @param {any} radicalsDb
+     * @param {any} radicalsByVariantDb
+     */
     static loadHanziDb(radicalsDb, radicalsByVariantDb) {
         const raw = fs.readFileSync("./data/hanzidb-formatted.json");
         const parsed = JSON.parse(raw);
