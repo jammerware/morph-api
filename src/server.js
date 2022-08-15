@@ -33,7 +33,7 @@ function start(services) {
             ctx.response.body = translation;
         })
         .get("/decomposition/:word/:targetLanguage?", async ctx => {
-            const word = ctx.params.word;
+            const word = ctx.params.word.trim();
             const wordContext = {};
 
             // if passed in chinese, translate to the target language (usually english)
@@ -52,6 +52,14 @@ function start(services) {
                 wordContext.l1 = word;
                 wordContext.translation = chinese.translation;
             }
+
+            // add word-level pinyin and definitions from cc-edict
+            const ccEdictData = services.data.getCcEdictData(word);
+            if (ccEdictData) {
+                wordContext.pinyin = ccEdictData.pinyin;
+                wordContext.definition = ccEdictData.definition;
+            }
+
 
             const response = {
                 word: wordContext,

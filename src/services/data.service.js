@@ -1,6 +1,7 @@
 // @ts-nocheck
 import fs from "fs";
 import * as fastcsv from '@fast-csv/parse';
+import LineByLine from 'n-readlines';
 
 /**
  * A service that manages access to the various data that make this API tick.
@@ -20,11 +21,37 @@ class DataService {
             instance.radicalsByVariantDb = DataService.loadRadicalsByVariant(instance.radicalsDb);
             instance.hanziDb = DataService.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
             instance.chineseLexicalDb = await DataService.loadChineseLexicalDb(instance.hanziDb);
+            instance.ccEdict = DataService.loadCcEdict();
             
             DataService.instance = instance;
         }
 
         return DataService.instance;
+    }
+
+    static loadCcEdict() {
+        const lineReader = new LineByLine("./data/cedict_ts.u8");
+        /** type {Buffer} */
+        let lineBuffer;
+
+        const data = {};
+
+        while (lineBuffer = lineReader.next()) {
+            const line = lineBuffer.toString();
+            
+            if (line.startsWith("#")) {
+                continue;
+            }
+
+            // note that we can't declare the regex globally because of the way regex exec works
+            const lineGroups = /(\S+) (\S+) \[([\S ]*?)\] \/([\s\S]+?)\//gm.exec(line);
+            data[lineGroups[2]] = {
+                pinyin: lineGroups[3],
+                definition: lineGroups[4]
+            }
+        }
+
+        return data;
     }
 
     static loadChineseLexicalDb(hanziDb) {
@@ -155,6 +182,14 @@ class DataService {
             isUnbound: hanziDbInfo.isUnbound || false,
             commonWords: cldbInfo.words
         };
+    }
+
+    getCcEdictData(word) {
+        if (word in this.ccEdict) {
+            return this.ccEdict[word];
+        }
+
+        return null;
     }
 
     getRecommendedSearchTerms() {
