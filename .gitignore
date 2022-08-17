@@ -1,3 +1,8 @@
 node_modules
 .env
 secrets
+
+# cedict_ts.u8 comes from https://cc-cedict.org/ and contains colloquial definitions
+# and useful word-level pinyin, but it's big and formatted nonideally, so download
+# it here and then preprocess with src/tools/preprocess-cc-cedict.js
+data/cedict_ts.u8
