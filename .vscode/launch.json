@@ -12,6 +12,15 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\src\\server.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug CEdict Preprocess",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\src\\tools\\preprocess-cc-cedict.js"
         }
     ]
 }

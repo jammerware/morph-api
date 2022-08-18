@@ -46,6 +46,13 @@ function start(services) {
 
                 wordContext.l1 = l1Translation.translation;
                 wordContext.translation = word;
+                
+                // add cc-cedict if it's there
+                const ccCedictData = services.data.getCcCedictData(word);
+                if (ccCedictData) {
+                    wordContext.definitions = ccCedictData.definitions;
+                    wordContext.pinyin = ccCedictData.pinyin;
+                }
             }
             else {
                 const chinese = await services.translation.translate(word);
@@ -58,9 +65,15 @@ function start(services) {
                 characters: []
             };
 
-
             for (const character of wordContext.translation) {
                 response.characters.push(services.data.getCharacter(character));
+            }
+
+            // add cc-cedict if it's there
+            const ccCedictData = services.data.getCcCedictData(wordContext.translation);
+            if (ccCedictData) {
+                wordContext.definitions = ccCedictData.definitions;
+                wordContext.pinyin = ccCedictData.pinyin;
             }
 
             ctx.response.body = response;

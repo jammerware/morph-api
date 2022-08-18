@@ -1,5 +1,5 @@
 // @ts-nocheck
-import fs from "fs";
+import fs, { fstatSync } from "fs";
 import * as fastcsv from '@fast-csv/parse';
 
 /**
@@ -20,11 +20,26 @@ class DataService {
             instance.radicalsByVariantDb = DataService.loadRadicalsByVariant(instance.radicalsDb);
             instance.hanziDb = DataService.loadHanziDb(instance.radicalsDb, instance.radicalsByVariantDb);
             instance.chineseLexicalDb = await DataService.loadChineseLexicalDb(instance.hanziDb);
+            instance.ccCEdict = await DataService.loadCcCedict();
             
             DataService.instance = instance;
         }
 
         return DataService.instance;
+    }
+
+    static loadCcCedict() {
+        return new Promise((resolve, reject) => {
+            fs.readFile('./data/cc-cedict.json', (err, data) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                const rawData = JSON.parse(data.toString());
+                resolve(rawData);
+            });
+        });
     }
 
     static loadChineseLexicalDb(hanziDb) {
@@ -113,7 +128,7 @@ class DataService {
     }
 
     static loadRadicalsDb() {
-        const raw = JSON.parse(fs.readFileSync('./data/radicals.json'))
+        const raw = JSON.parse(fs.readFileSync('./data/radicals.json'));
 
         // rename "english" to "translation"
         for (const [key, value] of Object.entries(raw)) {
@@ -143,6 +158,14 @@ class DataService {
         const raw = JSON.parse(fs.readFileSync('./data/recommended-search-terms.en.json'));
 
         return raw.terms;
+    }
+
+    getCcCedictData(word) {
+        if (word in this.ccCEdict) {
+            return this.ccCEdict[word];
+        }
+
+        return null;
     }
 
     getCharacter(character) {

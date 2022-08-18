@@ -11,11 +11,18 @@ class TranslationService {
         return TranslationService._instance;
     }
 
+    /**
+     * @param {{ toString: () => string; }} text
+     */
     isChinese(text) {
         return text && text.toString().match(/[\u3400-\u9FBF]/);
     }
 
     // infer the target language if unspecified: English if the text is chinese, otherwise chinese
+    /**
+     * @param {{ toString: () => string; }} text
+     * @param {string} targetLanguage
+     */
     __inferTargetLanguage(text, targetLanguage) {
         if (targetLanguage) {
             return targetLanguage;
