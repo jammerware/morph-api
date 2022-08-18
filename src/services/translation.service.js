@@ -31,6 +31,10 @@ class TranslationService {
         return this.isChinese(text) ? "en" : "zh-cn";
     }
 
+    /**
+     * @param {{ toString: () => string; }} text
+     * @param {string} targetLanguage
+     */
     async translate(text, targetLanguage) {
         const finalTargetLanguage = this.__inferTargetLanguage(text, targetLanguage);
         const translation = await this._translateClient.translate(text, finalTargetLanguage);
@@ -41,6 +45,10 @@ class TranslationService {
         };
     }
 
+    /**
+     * @param {string[]} texts
+     * @param {string} targetLanguage
+     */
     async translateAll(texts, targetLanguage) {
         if (!texts || !texts.length) {
             throw new Error(`"translateAll" requires at least one text to translate. You passed: ${texts}`);
