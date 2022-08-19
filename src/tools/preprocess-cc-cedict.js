@@ -56,7 +56,7 @@ function* buildPinyin(inPinyin) {
 
         const lastVowelMatch = vowels[vowels.length - 1]
         const lastVowelIndex = lastVowelMatch.index || 0;
-        const toneNumber = syllable[syllable.length-1];
+        const toneNumber = parseInt(syllable[syllable.length-1]) - 1;
 
         // replace the vowel with the correct character and slice off the tone number
         const outPinyin = syllable.substring(0, lastVowelIndex) 
