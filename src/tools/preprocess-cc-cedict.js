@@ -47,20 +47,27 @@ fs.writeFileSync('./data/cc-cedict.json', JSON.stringify(allEntries));
  */
 function* buildPinyin(inPinyin) {
     for (const syllable of inPinyin.split(' ')) {
-        const vowels = [...syllable.matchAll(/[aeiou]/g)]
+        const allVowels = ['a', 'e', 'i', 'o', 'u'];
+        const vowelMatches = [...syllable.matchAll(/[aeiou]/g)]
 
-        if (vowels.length == 0) {
+        if (vowelMatches.length == 0) {
             yield syllable;
             continue;
         }
 
-        const lastVowelMatch = vowels[vowels.length - 1]
-        const lastVowelIndex = lastVowelMatch.index || 0;
+        // the tone mark goes on the first vowel in aeiou order, so we
+        // sort and then replace the vowel at position 0
+        vowelMatches.sort((a, b) => {
+            return allVowels.indexOf(a[0]) < allVowels.indexOf(b[0]) ? -1 : 1;
+        });
+
+        const replaceVowelMatch = vowelMatches[0];
+        const lastVowelIndex = replaceVowelMatch.index || 0;
         const toneNumber = parseInt(syllable[syllable.length-1]) - 1;
 
         // replace the vowel with the correct character and slice off the tone number
         const outPinyin = syllable.substring(0, lastVowelIndex) 
-            + TONE_MAP[lastVowelMatch[0]][toneNumber] 
+            + TONE_MAP[replaceVowelMatch[0]][toneNumber] 
             + syllable.substring(lastVowelIndex + 1, syllable.length - 1);
 
         yield outPinyin;
