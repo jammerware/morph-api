@@ -47,7 +47,8 @@ fs.writeFileSync('./data/cc-cedict.json', JSON.stringify(allEntries));
  */
 function* buildPinyin(inPinyin) {
     for (const syllable of inPinyin.split(' ')) {
-        const allVowels = ['a', 'e', 'i', 'o', 'u'];
+        const allVowels = ['a', 'o', 'e', 'i', 'u', 'ü'];
+        
         const vowelMatches = [...syllable.matchAll(/[aeiou]/g)]
 
         if (vowelMatches.length == 0) {
@@ -55,21 +56,34 @@ function* buildPinyin(inPinyin) {
             continue;
         }
 
-        // the tone mark goes on the first vowel in aeiou order, so we
-        // sort and then replace the vowel at position 0
-        vowelMatches.sort((a, b) => {
-            return allVowels.indexOf(a[0]) < allVowels.indexOf(b[0]) ? -1 : 1;
-        });
+        // the vowel that gets the tone mark depends on their order in the syllable, with
+        // one special exception
+        vowelMatches.sort((a, b) => allVowels.indexOf(a[0]) < allVowels.indexOf(b[0]) ? -1 : 1);
+        const iuMatches = vowelMatches.filter(m => m[0] == 'i' || m[0] == 'u');
+        let replaceVowelMatch = null;
 
-        const replaceVowelMatch = vowelMatches[0];
-        const lastVowelIndex = replaceVowelMatch.index || 0;
-        const toneNumber = parseInt(syllable[syllable.length-1]) - 1;
+        if (iuMatches && iuMatches.length >= 2) {
+            // if i and u both appear, the mark goes on whichever of the two is last
+            replaceVowelMatch = iuMatches.pop();
+        }
+        else {
+            // otherwise, it goes on whichever vowel is first in allVowels order above
+            replaceVowelMatch = vowelMatches[0];
+        }
 
-        // replace the vowel with the correct character and slice off the tone number
-        const outPinyin = syllable.substring(0, lastVowelIndex) 
-            + TONE_MAP[replaceVowelMatch[0]][toneNumber] 
-            + syllable.substring(lastVowelIndex + 1, syllable.length - 1);
+        if (replaceVowelMatch) {
+            const lastVowelIndex = replaceVowelMatch.index || 0;
+            const toneNumber = parseInt(syllable[syllable.length-1]) - 1;
 
-        yield outPinyin;
+            // replace the vowel with the correct character and slice off the tone number
+            const outPinyin = syllable.substring(0, lastVowelIndex) 
+                + TONE_MAP[replaceVowelMatch[0]][toneNumber] 
+                + syllable.substring(lastVowelIndex + 1, syllable.length - 1);
+
+            yield outPinyin;
+            continue;
+        }
+
+        yield syllable;
     }
 }
