@@ -1,6 +1,7 @@
 // @ts-nocheck
 import fs, { fstatSync } from "fs";
 import * as fastcsv from '@fast-csv/parse';
+import { takeCoverage } from "v8";
 
 /**
  * A service that manages access to the various data that make this API tick.
@@ -178,6 +179,30 @@ class DataService {
             isUnbound: hanziDbInfo.isUnbound || false,
             commonWords: cldbInfo.words
         };
+    }
+
+    getCharacters(params) {
+        const retVal = [];
+
+        Object.entries(this.hanziDb).forEach(([key, value]) => {
+            retVal.push({
+                character: key,
+                ...value
+            });
+        });
+
+        // probably sorting stuff
+        retVal.sort((a, b) => {
+            a.freqRank < b.freqRank ? 1 : -1
+        });
+
+        const index = (params.page * 20) + params.take;
+        
+        return {
+            totalCharacters: retVal.length,
+            totalPages: retVal.length / params.take,
+            data: retVal.slice(index, index + 10)
+        }
     }
 
     getRecommendedSearchTerms() {

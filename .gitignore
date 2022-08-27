@@ -1,6 +1,12 @@
+# big
 node_modules
+
+# secret
 .env
 secrets
+
+# debug
+firebase-debug.log
 
 # cedict_ts.u8 comes from https://cc-cedict.org/ and contains colloquial definitions
 # and useful word-level pinyin, but it's big and formatted nonideally, so download

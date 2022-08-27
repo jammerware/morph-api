@@ -16,6 +16,12 @@ function start(services) {
         .get("/", ctx => {
             ctx.body = "Hello, world!"
         })
+        .get("/character/page/:page/take/:take", ctx => {
+            const page = parseInt(ctx.params.page);
+            const take = parseInt(ctx.params.take);
+
+            ctx.body = services.data.getCharacters({ page, take });
+        })
         .get("/recommended-search-terms", ctx => {
             ctx.body = services.data.getRecommendedSearchTerms()
         })
