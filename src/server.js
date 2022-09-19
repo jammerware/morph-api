@@ -38,6 +38,13 @@ function start(services) {
 
             ctx.response.body = translation;
         })
+        // this is bad because it clobbers a theoretically legitimate value, but I'm not sure what's better
+        .get("/decomposition/get-random", async ctx => {
+            const recSearchTerms = services.data.getRecommendedSearchTerms();
+            const term = recSearchTerms[Math.floor(Math.random() * recSearchTerms.length)];
+
+            ctx.response.body = { term };
+        })
         .get("/decomposition/:word/:targetLanguage?", async ctx => {
             const word = ctx.params.word;
             const wordContext = {};
