@@ -20,7 +20,17 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\src\\tools\\preprocess-cc-cedict.js"
+            "program": "${workspaceFolder}\\tools\\preprocess-cc-cedict.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Create Mongo",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\tools\\create-mongo-db.js",
+            "cwd": "${workspaceFolder}"
         }
     ]
 }

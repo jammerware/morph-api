@@ -131,8 +131,20 @@ class DataService {
     static loadRadicalsDb() {
         const raw = JSON.parse(fs.readFileSync('./data/radicals.json'));
 
-        // rename "english" to "translation"
         for (const [key, value] of Object.entries(raw)) {
+            // fix up variants/radicals
+            if (value.variant) {
+                value.variant = value.variant
+                    .trim()
+                    .replace("(", "")
+                    .replace(")", "");
+            }
+
+            if (value.radical) {
+                value.radical = value.radical.trim();
+            }
+
+            // rename "english" to "translation"
             value.translation = value.english;
             delete value.english;
         }
