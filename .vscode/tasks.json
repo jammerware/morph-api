@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker.io Tag/Push",
+            "type": "shell",
+            "command": [
+                "docker tag morph-api@latest docker.io/bensstein/morph-api:latest",
+                "docker push docker.io/bensstein/morph-api:latest"
+            ]
+        }
+    ]
+}
